@@ -2,21 +2,21 @@ import { useState } from 'react';
 import { AddCategory } from './components/AddCategory';
 
 export const GifFinderApp = () => {
-  const [categories, setCategories] = useState(['category 1', 'category 2', 'category 3']);
+  const [categories, setCategories] = useState([]);
 
-  const onAddCategory = () => {
-    setCategories([...categories, 'nuevo valor']);
+  const onAddCategory = (newCategory) => {
+    if (categories.includes(newCategory)) return;
+
+    setCategories([newCategory, ...categories]);
   };
 
   return (
     <>
       <h1>Buscador de GIFs</h1>
 
-      <AddCategory></AddCategory>
+      <AddCategory onNewCategory={(newCategory) => onAddCategory(newCategory)}></AddCategory>
 
       <ul>
-        <button onClick={onAddCategory}>Agregar categoría</button>
-
         {categories.map((category) => (
           <li key={category}> {category}</li>
         ))}
