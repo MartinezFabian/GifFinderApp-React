@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 export const GifFinderApp = () => {
   const [categories, setCategories] = useState([]);
@@ -16,11 +17,9 @@ export const GifFinderApp = () => {
 
       <AddCategory onNewCategory={(newCategory) => onAddCategory(newCategory)}></AddCategory>
 
-      <ul>
-        {categories.map((category) => (
-          <li key={category}> {category}</li>
-        ))}
-      </ul>
+      {categories.map((category) => (
+        <GifGrid key={category} category={category}></GifGrid>
+      ))}
     </>
   );
 };
