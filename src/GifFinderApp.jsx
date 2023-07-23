@@ -13,13 +13,17 @@ export const GifFinderApp = () => {
 
   return (
     <>
-      <h1>Buscador de GIFs</h1>
+      <header>
+        <h1>Buscador de GIFs</h1>
 
-      <AddCategory onNewCategory={(newCategory) => onAddCategory(newCategory)}></AddCategory>
+        <AddCategory onNewCategory={(newCategory) => onAddCategory(newCategory)}></AddCategory>
+      </header>
 
-      {categories.map((category) => (
-        <GifGrid key={category} category={category}></GifGrid>
-      ))}
+      <main>
+        {categories.map((category) => (
+          <GifGrid key={category} category={category}></GifGrid>
+        ))}
+      </main>
     </>
   );
 };
