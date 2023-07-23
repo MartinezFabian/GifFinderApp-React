@@ -1,0 +1,36 @@
+.form {
+  width: 100%;
+  display: flex;
+}
+
+@media (min-width: 468px) {
+  .form {
+    width: 42rem;
+  }
+}
+
+.form__input {
+  width: 80%;
+  padding: 0.5rem 2rem;
+  border-radius: 2rem 0 0 2rem;
+}
+
+.form__button {
+  width: 20%;
+  background-color: var(--main--color);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 2rem 2rem 0;
+}
+
+.form__button:hover {
+  cursor: pointer;
+}
+
+.form__icon {
+  color: var(--white);
+  width: 60%;
+  stroke: var(--white);
+}
