@@ -1,18 +1,8 @@
-import { useEffect, useState } from 'react';
-import { fetchGIFsByCategory } from '../helpers/fetchGIFsByCategory';
+import { useFetchGifs } from '../hooks/useFetchGifs';
 import { GifCard } from './GifCard';
 
 export const GifGrid = ({ category }) => {
-  const [gifs, setGifs] = useState([]);
-
-  const getGifs = async () => {
-    const response = await fetchGIFsByCategory(category);
-    setGifs(response);
-  };
-
-  useEffect(() => {
-    getGifs();
-  }, []);
+  const { gifs, isLoading } = useFetchGifs(category);
 
   return (
     <section>
