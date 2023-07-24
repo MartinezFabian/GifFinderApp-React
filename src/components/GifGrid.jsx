@@ -8,6 +8,13 @@ export const GifGrid = ({ category }) => {
   return (
     <section className={styles.category}>
       <h2 className={styles.category__heading}>{category}</h2>
+
+      {isLoading ? (
+        <div className={styles.category__loader}>
+          <span className={styles.loader}></span>
+        </div>
+      ) : null}
+
       <div className={styles.category__grid}>
         {gifs.map(({ id, title, url }) => (
           <GifCard key={id} title={title} url={url}></GifCard>
