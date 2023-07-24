@@ -1,8 +1,10 @@
+import styles from './GifCard.module.css';
+
 export const GifCard = ({ id, title, url }) => {
   return (
-    <article>
-      <img src={url} alt={title} />
-      <h3>{title}</h3>
+    <article className={styles.card}>
+      <img src={url} alt={title} className={styles.card__img} />
+      <h3 className={styles.card__title}>{title}</h3>
     </article>
   );
 };
