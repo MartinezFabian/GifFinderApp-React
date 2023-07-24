@@ -1,0 +1,19 @@
+.category {
+  margin-top: 8rem;
+}
+
+.category__heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 6rem;
+}
+
+@media (min-width: 468px) {
+  .category__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 27rem);
+    gap: 4rem;
+    justify-content: center;
+  }
+}
