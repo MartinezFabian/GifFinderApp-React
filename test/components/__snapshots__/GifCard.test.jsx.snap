@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests in <GifCard /> must match the snapshot 1`] = `
+<div>
+  <article
+    class="card"
+  >
+    <img
+      alt="messi"
+      class="card__img"
+      src="https://messi.com/messi.jpg"
+    />
+    <h3
+      class="card__title"
+    >
+      messi
+    </h3>
+  </article>
+</div>
+`;
