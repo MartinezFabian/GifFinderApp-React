@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import styles from './GifCard.module.css';
 
 export const GifCard = ({ id, title, url }) => {
@@ -7,4 +9,9 @@ export const GifCard = ({ id, title, url }) => {
       <h3 className={styles.card__title}>{title}</h3>
     </article>
   );
+};
+
+GifCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };
