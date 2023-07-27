@@ -22,7 +22,7 @@ export const AddCategory = ({ onNewCategory }) => {
   };
 
   return (
-    <form onSubmit={onFormSubmit} className={styles.form}>
+    <form onSubmit={onFormSubmit} className={styles.form} aria-label="form">
       <input
         type="text"
         placeholder="Buscar Gif"
