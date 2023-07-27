@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { fireEvent, getByTestId, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { AddCategory } from '../../src/components/AddCategory';
 
 describe('test in <AddCategory></AddCategory>', () => {
@@ -30,5 +30,17 @@ describe('test in <AddCategory></AddCategory>', () => {
     expect(inputText.value).toBe('');
     expect(onNewCategory).toHaveBeenCalledTimes(1);
     expect(onNewCategory).toHaveBeenCalledWith(inputValue);
+  });
+
+  test('onNewCategory must not be called if input value is empty', () => {
+    const onNewCategory = jest.fn();
+
+    render(<AddCategory onNewCategory={onNewCategory}></AddCategory>);
+
+    const form = screen.getByRole('form');
+
+    fireEvent.submit(form);
+
+    expect(onNewCategory).toHaveBeenCalledTimes(0);
   });
 });
