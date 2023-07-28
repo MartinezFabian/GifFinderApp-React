@@ -1,6 +1,7 @@
 import { useFetchGifs } from '../hooks/useFetchGifs';
 import { GifCard } from './GifCard';
 import styles from './GifGrid.module.css';
+import PropTypes from 'prop-types';
 
 export const GifGrid = ({ category }) => {
   const { gifs, isLoading } = useFetchGifs(category);
@@ -11,7 +12,7 @@ export const GifGrid = ({ category }) => {
 
       {isLoading ? (
         <div className={styles.category__loader}>
-          <span className={styles.loader}></span>
+          <span data-testid="loader" className={styles.loader}></span>
         </div>
       ) : null}
 
@@ -22,4 +23,8 @@ export const GifGrid = ({ category }) => {
       </div>
     </section>
   );
+};
+
+GifGrid.propTypes = {
+  category: PropTypes.string.isRequired,
 };
