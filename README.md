@@ -24,4 +24,4 @@ The main objective of the Gif Finder App is to create a user-friendly GIF search
 
 ## Online Demo
 
-You can access the online demo of Gif Finder App at [Demo Link](...).
+You can access the online demo of Gif Finder App at [Demo Link](https://martinezfabian.github.io/GifFinderApp-React/).
